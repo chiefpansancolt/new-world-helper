@@ -114,3 +114,46 @@ export const addMemberToCompany = (companyId: string, member: Company["members"]
 
   return true;
 };
+
+export const updateMemberInCompany = (
+  companyId: string,
+  originalName: string,
+  updatedMember: Company["members"][0]
+): boolean => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const company = getCompanyById(companyId);
+
+  if (!company) {
+    return false;
+  }
+
+  const memberIndex = company.members.findIndex((m) => m.name === originalName);
+
+  if (memberIndex === -1) {
+    return false;
+  }
+
+  const updatedMembers = [...company.members];
+  updatedMembers[memberIndex] = updatedMember;
+
+  const updatedCompany = {
+    ...company,
+    members: updatedMembers,
+    updatedAt: new Date().toISOString(),
+  };
+
+  saveCompany(updatedCompany);
+
+  return true;
+};
+
+export const getMemberByIndex = (companyId: string, index: number): Company["members"][0] | null => {
+  const company = getCompanyById(companyId);
+  if (!company || !company.members[index]) {
+    return null;
+  }
+  return company.members[index];
+};

@@ -36,3 +36,18 @@ export const addMemberToCompany = async (
 ): Promise<boolean> => {
   return browserStorage.addMemberToCompany(companyId, member);
 };
+
+export const updateMemberInCompany = async (
+  companyId: string,
+  originalName: string,
+  updatedMember: Company["members"][0],
+): Promise<boolean> => {
+  return browserStorage.updateMemberInCompany(companyId, originalName, updatedMember);
+};
+
+export const getMemberByIndex = async (
+  companyId: string,
+  index: number,
+): Promise<Company["members"][0] | null> => {
+  return browserStorage.getMemberByIndex(companyId, index);
+};

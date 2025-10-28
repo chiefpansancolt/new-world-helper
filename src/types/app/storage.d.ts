@@ -11,6 +11,7 @@ export interface Member {
   name: string;
   role: "Member" | "Settler" | "Officer" | "Council" | "Governor";
   houseCount: number;
+  preferredRaidDays: string[];
   trophies: Trophy[];
   gearsets: Gearset[];
 }

@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HiEye, HiPencil, HiPlus, HiTrash } from "react-icons/hi";
+import BreadcrumbsComp from "@/comps/layout/Breadcrumbs";
 import { Company, Member } from "@/types";
 import { getCompanyById } from "@/lib/storage";
 
@@ -82,27 +83,25 @@ export default function MembersPage() {
 	}
 
 	return (
-		<div className="p-6">
-			<div className="mb-6 flex items-center justify-between">
-				<div>
-					<h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-						{company.name}
-					</h1>
-					<p className="mt-1 text-gray-500 dark:text-gray-400">
-						{company.type} • {company.members.length} member
-						{company.members.length !== 1 ? "s" : ""}
-					</p>
-				</div>
-				<div className="flex gap-2">
-					<Button as={Link} href="/company/list" color="light">
-						Back to List
-					</Button>
+		<div>
+			<BreadcrumbsComp name={company.name} overview={true} id={companyId} />
+
+			<div className="p-6">
+				<div className="mb-6 flex items-center justify-between">
+					<div>
+						<h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+							{company.name}
+						</h1>
+						<p className="mt-1 text-gray-500 dark:text-gray-400">
+							{company.type} • {company.members.length} member
+							{company.members.length !== 1 ? "s" : ""}
+						</p>
+					</div>
 					<Button as={Link} href={`/company/${companyId}/member/new`} color="primary">
 						<HiPlus className="mr-2 h-5 w-5" />
 						Add Member
 					</Button>
 				</div>
-			</div>
 
 			{company.members.length === 0 ? (
 				<Card>
@@ -189,6 +188,7 @@ export default function MembersPage() {
 					</div>
 				</Card>
 			)}
+			</div>
 		</div>
 	);
 }
