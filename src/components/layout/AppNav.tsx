@@ -28,13 +28,13 @@ export default function AppNav({
 					</Button>
 
 					<Link href="/" className="mr-4 flex items-center justify-center">
-						{/*<Image
-							src=""
+						<Image
+							src="/NewWorldLogo.svg"
 							className="mr-3 h-8"
 							alt="New World Logo"
 							width={32}
 							height={32}
-						/>*/}
+						/>
 						<span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
 							New World Helper
 						</span>

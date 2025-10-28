@@ -9,13 +9,13 @@ export default function Footer() {
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
 					<div className="col-span-1 md:col-span-2">
 						<Link href="/" className="mb-4 flex items-center">
-							{/*<Image
-								src=""
+							<Image
+								src="/NewWorldLogo.svg"
 								className="mr-3 h-8"
 								alt="New World Logo"
 								width={32}
 								height={32}
-							/>*/}
+							/>
 							<span className="self-center text-2xl font-semibold whitespace-nowrap">
 								New World Helper
 							</span>
