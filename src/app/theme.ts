@@ -1,5 +1,4 @@
 import { createTheme, theme } from "flowbite-react";
-import { twMerge } from "flowbite-react/helpers/tailwind-merge";
 import type { CustomFlowbiteTheme } from "flowbite-react/types";
 
 export const customTheme: CustomFlowbiteTheme = createTheme({
@@ -11,20 +10,10 @@ export const customTheme: CustomFlowbiteTheme = createTheme({
         "bg-secondary hover:bg-secondary/80 focus:ring-secondary text-white",
       accent: "bg-accent hover:bg-accent/80 focus:ring-accent text-white",
     },
-    size: {
-      xs: "h-8 px-3 text-xs",
-      sm: "h-9 px-3 text-sm",
-      md: "h-10 px-5 text-sm",
-      lg: "h-12 px-5 text-base",
-      xl: "h-[52px] px-6 text-base",
-    },
-  },
-  dropdown: {
-    inlineWrapper: twMerge(theme.dropdown.inlineWrapper, "cursor-pointer"),
   },
   toast: {
     toggle: {
-      base: twMerge(theme.toast.toggle.base, "cursor-pointer"),
+      base: "cursor-pointer",
     },
   },
   sidebar: {

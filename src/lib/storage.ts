@@ -19,8 +19,8 @@ export const deleteCompany = async (id: string): Promise<void> => {
   browserStorage.deleteCompany(id);
 };
 
-export const createEmptyCompany = (name: string): Company => {
-  return browserStorage.createEmptyCompany(name);
+export const createEmptyCompany = (name: string, type: "Company" | "Raid Group"): Company => {
+  return browserStorage.createEmptyCompany(name, type);
 };
 
 export const updateCompanyData = async (

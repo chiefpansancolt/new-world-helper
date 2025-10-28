@@ -61,9 +61,10 @@ export const deleteCompany = (id: string): void => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedCompany));
 };
 
-export const createEmptyCompany = (name: string): Company => {
+export const createEmptyCompany = (name: string, type: "Company" | "Raid Group"): Company => {
   return {
     id: Date.now().toString(),
+    type,
     name,
     createdAt: "",
     updatedAt: "",
