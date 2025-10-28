@@ -68,10 +68,7 @@ export default function NewMemberPage() {
 	return (
 		<div className="p-6">
 			<div className="mb-6">
-				<Link
-					href={`/company/${companyId}`}
-					className="text-primary hover:underline"
-				>
+				<Link href={`/company/${companyId}`} className="text-primary hover:underline">
 					← Back to {companyName || "Company"}
 				</Link>
 			</div>
@@ -140,12 +137,7 @@ export default function NewMemberPage() {
 						{error && <Alert color="failure">{error}</Alert>}
 
 						<div className="flex justify-end gap-2">
-							<Button
-								as={Link}
-								href={`/company/${companyId}`}
-								color="light"
-								disabled={isSubmitting}
-							>
+							<Button as={Link} href={`/company/${companyId}`} color="light">
 								Cancel
 							</Button>
 							<Button type="submit" color="primary" disabled={isSubmitting}>
@@ -156,8 +148,8 @@ export default function NewMemberPage() {
 
 					<div className="mt-6 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20">
 						<p className="text-sm text-blue-800 dark:text-blue-300">
-							<strong>Note:</strong> Trophies and gearsets can be added after
-							creating the member by editing their profile.
+							<strong>Note:</strong> Trophies and gearsets can be added after creating
+							the member by editing their profile.
 						</p>
 					</div>
 				</Card>
