@@ -92,3 +92,25 @@ export const updateCompanyData = (companyId: string, updates: {}): boolean => {
 
   return true;
 };
+
+export const addMemberToCompany = (companyId: string, member: Company["members"][0]): boolean => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const company = getCompanyById(companyId);
+
+  if (!company) {
+    return false;
+  }
+
+  const updatedCompany = {
+    ...company,
+    members: [...company.members, member],
+    updatedAt: new Date().toISOString(),
+  };
+
+  saveCompany(updatedCompany);
+
+  return true;
+};

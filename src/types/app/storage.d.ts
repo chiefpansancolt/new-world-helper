@@ -9,7 +9,7 @@ export interface Company {
 
 export interface Member {
   name: string;
-  role: "Settler" | "Officer" | "Council" | "Governor";
+  role: "Member" | "Settler" | "Officer" | "Council" | "Governor";
   houseCount: number;
   trophies: Trophy[];
   gearsets: Gearset[];
@@ -57,6 +57,7 @@ export interface Gearset {
   trinketArtifact: string;
   gearscore: number;
   attributes: Attributes;
+  primary: boolean;
 }
 
 export interface Attributes {

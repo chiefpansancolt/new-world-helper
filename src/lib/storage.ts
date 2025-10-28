@@ -29,3 +29,10 @@ export const updateCompanyData = async (
 ): Promise<boolean> => {
   return browserStorage.updateCompanyData(companyId, updates);
 };
+
+export const addMemberToCompany = async (
+  companyId: string,
+  member: Company["members"][0],
+): Promise<boolean> => {
+  return browserStorage.addMemberToCompany(companyId, member);
+};

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HiCog, HiHome, HiViewList } from "react-icons/hi";
+import { MdDashboard } from "react-icons/md";
 import SidebarCollapse from "./SidebarCollapse";
 
 interface SidebarLinkProps {
@@ -77,7 +78,28 @@ export default function AppSidebar({ sidebarOpen }: { sidebarOpen: boolean }) {
 							Company / Raid Groups
 						</SidebarLink>
 					</li>
+
+					{isCompanyRoute && (
+						<>
+							<div className="mt-6 mb-2 border-t border-gray-200 pt-3 dark:border-gray-700">
+								<p className="px-2 text-sm font-semibold text-gray-200">
+									Current Company / Raid Group
+								</p>
+							</div>
+
+							<li>
+								<SidebarLink
+									href={`/company/${companyId}`}
+									currentPath={pathname}
+									icon={<MdDashboard />}
+								>
+									Overview
+								</SidebarLink>
+							</li>
+						</>
+					)}
 				</ul>
+
 				<div className="bg-accent absolute right-0 bottom-0 left-0 border-t border-gray-200 p-4 dark:border-gray-700">
 					<ul className="space-y-2">
 						<li>
