@@ -4,12 +4,19 @@ import type { CustomFlowbiteTheme } from "flowbite-react/types";
 
 export const customTheme: CustomFlowbiteTheme = createTheme({
   button: {
-    base: twMerge(theme.button.base, "cursor-pointer"),
+    base: "cursor-pointer",
     color: {
       primary: "bg-primary hover:bg-primary/80 focus:ring-primary text-white",
       secondary:
         "bg-secondary hover:bg-secondary/80 focus:ring-secondary text-white",
       accent: "bg-accent hover:bg-accent/80 focus:ring-accent text-white",
+    },
+    size: {
+      xs: "h-8 px-3 text-xs",
+      sm: "h-9 px-3 text-sm",
+      md: "h-10 px-5 text-sm",
+      lg: "h-12 px-5 text-base",
+      xl: "h-[52px] px-6 text-base",
     },
   },
   dropdown: {

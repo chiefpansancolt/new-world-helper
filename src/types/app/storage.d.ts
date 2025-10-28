@@ -1,5 +1,6 @@
 export interface Company {
   id: string;
+  type: "Company" | "Raid Group";
   name: string;
   createdAt: string;
   updatedAt: string;

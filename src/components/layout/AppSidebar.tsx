@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { HiCog } from "react-icons/hi";
+import { HiCog, HiHome, HiViewList } from "react-icons/hi";
 import SidebarCollapse from "./SidebarCollapse";
 
 interface SidebarLinkProps {
@@ -57,6 +57,27 @@ export default function AppSidebar({ sidebarOpen }: { sidebarOpen: boolean }) {
 			id="drawer-navigation"
 		>
 			<div className="bg-accent h-full overflow-y-auto px-3 pb-28">
+				<ul className="space-y-2">
+					<li>
+						<SidebarLink
+							href="/"
+							currentPath={pathname}
+							icon={<HiHome className="h-5 w-5" />}
+						>
+							Home
+						</SidebarLink>
+					</li>
+
+					<li>
+						<SidebarLink
+							href="/company/list"
+							currentPath={pathname}
+							icon={<HiViewList className="h-5 w-5" />}
+						>
+							Company / Raid Groups
+						</SidebarLink>
+					</li>
+				</ul>
 				<div className="bg-accent absolute right-0 bottom-0 left-0 border-t border-gray-200 p-4 dark:border-gray-700">
 					<ul className="space-y-2">
 						<li>
