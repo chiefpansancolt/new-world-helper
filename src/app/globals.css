@@ -4,6 +4,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-primary: oklch(45% 0.2 290);
+  --color-secondary: oklch(55% 0.18 280);
+  --color-accent: oklch(35% 0.15 295);
+  --color-highlight: oklch(75% 0.12 285);
+}
+
 .Toastify__toast {
   padding: 0 !important;
 }

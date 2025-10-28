@@ -27,7 +27,7 @@ export default function Footer() {
 						<ul className="mt-5 flex space-x-6">
 							<li>
 								<a
-									href="https://github.com/chiefpansancolt/dinkum-tracker"
+									href="https://github.com/chiefpansancolt/new-world-helper"
 									className="hover:text-highlight text-gray-200"
 									target="_blank"
 									rel="noopener noreferrer"

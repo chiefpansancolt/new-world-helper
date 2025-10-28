@@ -66,6 +66,10 @@ export interface Attributes {
   constitution: number;
 }
 
+export interface CompanyUpdateData {
+  members?: Partial<Member>;
+}
+
 export interface ImportData {
   companies: Company[];
   version: string;

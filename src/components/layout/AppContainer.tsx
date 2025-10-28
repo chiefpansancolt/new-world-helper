@@ -13,7 +13,7 @@ export default function AppContainer({ children }: { children: React.ReactNode }
 	};
 
 	return (
-		<div className="bg-gray-50 antialiased dark:bg-gray-900">
+		<div className="bg-gray-50 antialiased dark:bg-gray-800">
 			<AppNav sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
 			<AppSidebar sidebarOpen={sidebarOpen} />
